@@ -1,0 +1,13 @@
+a:link, a:visited, a:visited {
+    color: #444;
+}
+
+a.hover {
+    color: #000;
+}
+.text-left {
+    text-align: left;
+}
+.space {
+    margin: 50px auto;
+}

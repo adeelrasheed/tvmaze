@@ -1,0 +1,32 @@
+a:link, a:visited, a:active {
+    color: #444;
+}
+
+.search-box {
+    margin-top: 50px;
+}
+
+.search-box input {
+    width: 50%;
+    font-size: 11px;
+    padding: 5px;
+}
+
+.search-result {
+    margin: 50px auto;
+}
+
+.search-result div {
+    margin-top: 10px;
+}
+
+.title, .desp {
+    font-size: 11px;
+}
+
+.desp {
+    height: 100px;
+    padding: 10px;
+    text-align: left;
+    overflow: auto;
+}

@@ -1,0 +1,57 @@
+<!-- show main information -->
+<div class="row" *ngIf="showdetail">
+  <div class="col-md-4">
+    <span *ngIf="showdetail.image">
+        <img src="{{showdetail.image.medium}}">
+    </span>
+    <span *ngIf="!showdetail.image">
+        <img src="../../assets/images/noimage.jpg">
+    </span>
+  </div>
+  <div class="col-md-8 text-left">
+    <div class="title">
+      {{showdetail.name}}
+    </div>
+    <div class="title">
+      Total seasons : {{seasondetail?.length}}
+    </div>
+    <div class="title">
+      Total episodes : {{episodesdetail?.length}} 
+    </div>
+    <div class="desp space" [innerHTML]="showdetail.summary"></div>
+    <div>
+      <a routerLink="/dashboard"> Back </a>
+    </div>
+  </div>
+</div>
+<!-- show season detail -->
+<div class="row space" *ngIf="seasondetail">
+  <div class="accordion col-md-12" *ngFor="let season of seasondetail" id="accordionExample">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+              Season {{season.number}} - Episode {{season.episodeOrder}}
+          </h5>
+        </div>
+        <!-- episodes detail -->
+        <div class="collapse show">
+          <div class="card-body">
+              <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                      <th scope="col">Episode</th>
+                      <th scope="col">Name</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let episode of episodesdetail">
+                    <tr *ngIf="episode.season == season.number">
+                      <th scope="row">{{episode.number}}</th>
+                      <td>{{episode.name}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

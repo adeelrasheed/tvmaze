@@ -1,0 +1,28 @@
+<!-- search and search result content -->
+<div class="container">
+    <div class="row search-box">
+        <div class="col-md-12 text-center">
+            <input #searchBox id="search-box" (keyup)="search(searchBox.value)" placeholder="Enter text to search ​tv-show​" />
+        </div>
+    </div>
+    <div  *ngIf="!singleshow" class="row search-result">
+            <div *ngFor="let show of tvmazeshows$ | async" class="col-md-3">
+                <div>
+                    <a routerLink="/detail/{{show.show.id}}">
+                        <span *ngIf="show.show.image">
+                            <img src="{{show.show.image?.medium}}">
+                        </span>
+                        <span *ngIf="!show.show.image">
+                            <img src="../../assets/images/noimage.jpg">
+                        </span>
+                    </a>
+                </div>
+                <div>
+                    <a routerLink="/detail/{{show.show.id}}">
+                        <strong class="title"> {{show.show.name}} </strong>
+                    </a>
+                </div>
+                <div class="desp" [innerHTML]="show.show.summary"></div>
+            </div>
+    </div>
+</div>

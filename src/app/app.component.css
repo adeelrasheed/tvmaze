@@ -1,0 +1,11 @@
+.text-center {
+    text-align: center;
+}
+
+.logo {
+    margin: 50px auto;
+}
+
+.logo img {
+    width: 300px;
+}
